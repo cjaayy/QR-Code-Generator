@@ -4,15 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Generator</title>
-    <link rel="icon" type="images/x-icon" href="images/QRCode (1).png" />
+    <link rel="icon" type="image/png" href="images/QRCode (1).png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <input type="text" id="qr-input" placeholder="Enter URL Link to generate QR Code">
-        <button id="generate-btn">Generate QR Code</button>
-        <div id="qrcode"></div>
-    </div>
+    <header>
+        <div class="logo">
+            <img src="images/QRCode (1).png" alt="QR Code Logo" width="40">
+            <h1>QR Code Generator</h1>
+        </div>
+    </header>
+    <main class="container">
+        <section class="input-section">
+            <h2>Generate Your QR Code</h2>
+            <p class="description">Enter a URL or text below to create a QR code that you can download and share.</p>
+            
+            <div class="input-group">
+                <input type="text" id="qr-input" placeholder="Enter URL or text to generate QR Code">
+                <div class="buttons">
+                    <button id="clear-btn" title="Clear input"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            
+            <div class="options">
+                <div class="size-option">
+                    <label for="qr-size">Size:</label>
+                    <select id="qr-size">
+                        <option value="100">Small</option>
+                        <option value="200" selected>Medium</option>
+                        <option value="300">Large</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button id="generate-btn"><i class="fas fa-qrcode"></i> Generate QR Code</button>
+        </section>
+        
+        <section id="qrcode-section" class="hidden">
+            <h3>Your QR Code</h3>
+            <div id="qrcode"></div>
+            <div id="download-options"></div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 QR Code Generator | Made with <i class="fas fa-heart"></i></p>
+    </footer>
+    
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
     <script src="script.js"></script>
 </body>
